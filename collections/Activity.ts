@@ -7,6 +7,9 @@ export const Activity: CollectionConfig = {
   slug: "activity",
   access: {
     read: () => true,
+    create: () => true,
+    update: () => true,
+    delete: () => true,
   },
   fields: [],
   upload: true,

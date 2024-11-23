@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     service: Service;
     activity: Activity;
+    present: Present;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -23,6 +24,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     service: ServiceSelect<false> | ServiceSelect<true>;
     activity: ActivitySelect<false> | ActivitySelect<true>;
+    present: PresentSelect<false> | PresentSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -107,6 +109,17 @@ export interface Activity {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "present".
+ */
+export interface Present {
+  id: number;
+  description: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -123,6 +136,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'activity';
         value: number | Activity;
+      } | null)
+    | ({
+        relationTo: 'present';
+        value: number | Present;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -208,6 +225,16 @@ export interface ActivitySelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "present_select".
+ */
+export interface PresentSelect<T extends boolean = true> {
+  description?: T;
+  title?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -7,6 +7,9 @@ export const Service: CollectionConfig = {
   slug: "service",
   access: {
     read: () => true,
+    create: () => true,
+    update: () => true,
+    delete: () => true,
   },
   fields: [],
   upload: true,

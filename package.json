@@ -5,7 +5,9 @@
     "dev-turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "importMap": "payload generate:importmap"
+    "importMap": "payload generate:importmap",
+    "db-gen-diff": "supabase db diff -f local --schema payload",
+    "db-gen-seed": "supabase db dump --data-only --local --exclude auth.audit_log_entries,auth.refresh_tokens,auth.sessions,auth.mfa_amr_claims -f ./supabase/seed.sql"
   },
   "dependencies": {
     "@payloadcms/db-postgres": "^3.1.0",
