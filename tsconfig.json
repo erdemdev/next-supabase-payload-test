@@ -23,7 +23,8 @@
       "@/*": ["./*"],
       "@/app/*": ["./app/(app)/*"],
       "@payload-config": ["./payload.config.ts"]
-    }
+    },
+    "noUncheckedIndexedAccess": true
   },
   "include": [
     "next-env.d.ts",

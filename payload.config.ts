@@ -18,7 +18,17 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
-    // theme: "dark",
+    routes: {
+      login: "/../sign-in",
+    },
+    avatar: {
+      Component: "/components/null",
+    },
+    components: {
+      logout: {
+        Button: "/components/null",
+      },
+    },
   },
   collections: [Users, Service, Activity],
   editor: lexicalEditor(),
