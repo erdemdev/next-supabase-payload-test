@@ -49,12 +49,12 @@ export default buildConfig({
       getStorageConfig({
         bucket: "service",
         collections: {
-          service: true,
-          // service: {
-          //   generateFileURL: ({ filename }) => {
-          //     return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/service/${filename}`;
-          //   },
-          // },
+          service: {
+            disablePayloadAccessControl: true,
+            generateFileURL: ({ filename, collection }) => {
+              return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${collection.slug}/${filename}`;
+            },
+          },
         },
       }),
     ),
