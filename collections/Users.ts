@@ -7,12 +7,6 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: "email",
   },
-  access: {
-    read: () => true,
-    // create: () => false,
-    // update: () => false,
-    // delete: () => false,
-  },
   auth: {
     disableLocalStrategy: true,
     strategies: [

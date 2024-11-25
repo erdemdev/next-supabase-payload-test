@@ -5,12 +5,6 @@ export const Service: CollectionConfig = {
     group: "Media",
   },
   slug: "service",
-  access: {
-    read: () => true,
-    create: () => true,
-    update: () => true,
-    delete: () => true,
-  },
   fields: [],
   upload: true,
 };

@@ -5,12 +5,6 @@ export const Activity: CollectionConfig = {
     group: "Media",
   },
   slug: "activity",
-  access: {
-    read: () => true,
-    create: () => true,
-    update: () => true,
-    delete: () => true,
-  },
   fields: [],
   upload: true,
 };
