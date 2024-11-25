@@ -1,6 +1,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import { buildConfig } from "payload";
+import { payloadCloudPlugin } from "@payloadcms/payload-cloud";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { s3Storage, S3StorageOptions } from "@payloadcms/storage-s3";
@@ -45,6 +46,7 @@ export default buildConfig({
   }),
   sharp,
   plugins: [
+    payloadCloudPlugin(),
     s3Storage(
       getStorageConfig({
         bucket: "service",
