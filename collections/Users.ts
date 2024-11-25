@@ -8,10 +8,10 @@ export const Users: CollectionConfig = {
     useAsTitle: "email",
   },
   access: {
-    read: () => false,
-    create: () => false,
-    update: () => false,
-    delete: () => false,
+    read: () => true,
+    // create: () => false,
+    // update: () => false,
+    // delete: () => false,
   },
   auth: {
     disableLocalStrategy: true,
