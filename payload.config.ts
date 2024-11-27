@@ -51,12 +51,13 @@ export default buildConfig({
       getStorageConfig({
         bucket: "service",
         collections: {
-          service: {
-            disablePayloadAccessControl: true,
-            generateFileURL: ({ filename, collection }) => {
-              return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${collection.slug}/${filename}`;
-            },
-          },
+          // service: {
+          //   disablePayloadAccessControl: true,
+          //   generateFileURL: ({ filename, collection }) => {
+          //     return `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/${collection.slug}/${filename}`;
+          //   },
+          // },
+          service: true,
         },
       }),
     ),
