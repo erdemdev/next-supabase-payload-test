@@ -20,9 +20,9 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
-    // routes: {
-    //   login: "/../sign-in",
-    // },
+    routes: {
+      login: "/../sign-in",
+    },
     avatar: {
       Component: "/components/null",
     },
